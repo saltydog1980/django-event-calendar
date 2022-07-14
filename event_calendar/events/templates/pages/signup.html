@@ -1,0 +1,43 @@
+{% extends "pages/layout.html" %}
+{% load static %}
+
+    {% block content %}
+    <div class="container d-flex justify-content-center pt-5 align-middle">
+        <div class="col">
+            <h1>
+                <strong>
+                    Please enter your information to sign up.
+                </strong>
+            </h1> <br><br>
+
+            <form>
+                <!--Enter First Name-->
+                <td> First Name </td>
+                <input type="text" id="first_name"> <br><br>
+
+                <!--Enter Last Name-->
+                <td> Last Name </td>
+                <input type="text" id="last_name"> <br><br>
+
+                <!--Enter Email-->
+                <td> Enter Email </td>
+                <input type="text" id="email"> <br><br>  
+
+                <!-- Enter Password -->  
+                <td> Enter Password </td>  
+                <input type="password" id="pswd1"> <br><br>  
+                
+                <!-- Enter Confirm password -->  
+                <td> Confirm Password </td>  
+                <input type="password" id="pswd2"> <br><br>  
+                
+                <!--Click to validate confirm password -->  
+                <button type="submit" onclick="signUp(event)">Submit</button>  
+                
+                <!-- Click to reset fields -->  
+                <button type="reset" value="Reset" >Reset</button>  
+
+            </form>
+        </div>
+    </div>
+    {% endblock %}

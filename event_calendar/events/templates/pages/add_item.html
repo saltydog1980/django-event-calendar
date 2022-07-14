@@ -1,0 +1,39 @@
+{% extends "pages/layout.html" %}
+{% load static %}
+
+    {% block content %}
+    <div class="container d-flex justify-content-center pt-5 align-middle">
+        <div class="col">
+            <h1>
+                <strong>
+                    Please enter event information.
+                </strong>
+            </h1> <br><br>
+
+            <form>
+                <!--Enter Event Name-->
+                <td> Event Name </td>
+                <input type="text" id="name"> <br><br>
+
+                <!--Enter Description-->
+                <td> Event Description </td>
+                <input type="text" id="description"> <br><br>
+
+                <!--Enter Start Time-->
+                <td> Event Start Time </td>
+                <input type="datetime-local" id="start"> <br><br>  
+
+                <!-- Enter End Time-->  
+                <td> Event End Time </td>  
+                <input type="datetime-local" id="end"> <br><br>   
+                
+                <!--Click to Enter Item -->  
+                <button type="submit" onclick="addItem(event)">Submit</button>  
+                
+                <!-- Click to reset fields -->  
+                <button type="reset" value="Reset" >Reset</button>  
+
+            </form>
+        </div>
+    </div>
+    {% endblock %}

@@ -1,0 +1,41 @@
+{% extends "pages/layout.html" %}
+{% load static %}
+
+    {% block content %}
+    <div class="container d-flex justify-content-center pt-5 align-middle">
+        <div class="col">
+            <h1>
+                <strong>
+                    Please enter updated information.
+                </strong>
+            </h1> <br><br>
+
+            <form><!--prepopulating the fields with original data-->
+                <!--Enter Event Name-->
+                <td> Event Name </td>
+                <input type="text" id="name" value="{{event.name}}"> <br><br>
+
+                <!--Enter Description-->
+                <td> Event Description </td>
+                <input type="text" id="description" value="{{event.description}}"> <br><br>
+
+                <!--Enter Start Time-->
+                <td> Event Start Time </td>
+                <input type="datetime-local" id="start" value="{{event.starts_at|date:'Y-m-d'}}T{{event.starts_at|time:'H:i:s'}}"> <br><br>  
+                
+                <!-- Enter End Time-->  
+                <td> Event End Time </td>  
+                <input type="datetime-local" id="end" value="{{event.ends_at|date:'Y-m-d'}}T{{event.ends_at|time:'H:i:s'}}"> <br><br>   
+                
+                <!--Click to Enter Item -->  
+                <button type="submit" onclick="updateItem(event, {{event.id}})">Submit</button>  
+                
+                <!-- Click to reset fields -->  
+                <button type="reset" value="Reset" >Reset</button>
+
+                <!-- Click to Delete Event -->  
+                <button type="submit" onclick="deleteItem(event, {{event.id}})" >Delete Item</button> 
+            </form>
+        </div>
+    </div>
+    {% endblock %}
